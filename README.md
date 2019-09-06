@@ -50,3 +50,12 @@ For XML Generation:
 - `MarkupGen_xml_toText` Converts an XML element to text.
 - `MarkupGen_xml_newTextPart` (Less common): Creates a new element for text.
 - `MarkupGen_xml_newRawPart`  (Less common): Creates a new element with raw XML.
+
+## Installing
+
+- For Appian cloud instances, look for the plugin in the Plugins section of the Administrative console.
+- For local Appian installations, add the JAR to the plugins folder of the Appian server.
+
+## Compiling
+
+Use the Maven project in your IDE. In order for the project to compile, you will need to copy Appian JAR files to the internalRepoOnly folder. You will also need to edit the POM.xml file to set the right Appian compile version to properly reference the Appian files.
