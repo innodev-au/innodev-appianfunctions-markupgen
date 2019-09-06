@@ -1,0 +1,46 @@
+<!-- 
+ Copyright 2019 Innodev
+ 
+ Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ use this file except in compliance with the License. You may obtain a copy of
+ the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ License for the specific language governing permissions and limitations under
+ the License.
+ -->
+<appian-plugin name="${project.name}" key="au.com.innodev.appianplugin.markupgen.plugin">
+
+	<plugin-info>
+		<description>${project.description}</description>		
+		<version>${project.version}</version>
+		<application-version min="17.1.0" />
+		<vendor name="Innodev" url="https://www.innodev.com.au" />
+	</plugin-info>
+	
+     <datatype key="MarkupGen_HtmlPart" name="MarkupGen Internal HTML Part">
+      <class>au.com.innodev.appianplugin.markupgen.plugin.types.HtmlPart</class>
+    </datatype>
+    
+    <datatype key="MarkupGen_XmlPart" name="MarkupGen Internal XML Part">
+      <class>au.com.innodev.appianplugin.markupgen.plugin.types.XmlPart</class>
+    </datatype>
+    
+   
+	<function-category key="markupGen" name="HTML / XML Markup Generation"  />
+	
+    <function key="markupGen_html_newElem" class="au.com.innodev.appianplugin.markupgen.plugin.functions.MarkupGen_html_newElem" />
+    <function key="markupGen_html_toText" class="au.com.innodev.appianplugin.markupgen.plugin.functions.MarkupGen_html_toText" />
+    <function key="markupGen_html_newRawPart" class="au.com.innodev.appianplugin.markupgen.plugin.functions.MarkupGen_html_newRawPart" />
+    <function key="markupGen_html_newTextPart" class="au.com.innodev.appianplugin.markupgen.plugin.functions.MarkupGen_html_newTextPart" />
+    
+    <function key="markupGen_xml_newElem" class="au.com.innodev.appianplugin.markupgen.plugin.functions.MarkupGen_xml_newElem" />
+    <function key="markupGen_xml_toText" class="au.com.innodev.appianplugin.markupgen.plugin.functions.MarkupGen_xml_toText" />
+    <function key="markupGen_xml_newRawPart" class="au.com.innodev.appianplugin.markupgen.plugin.functions.MarkupGen_xml_newRawPart" />
+    <function key="markupGen_xml_newTextPart" class="au.com.innodev.appianplugin.markupgen.plugin.functions.MarkupGen_xml_newTextPart" />
+   
+</appian-plugin>

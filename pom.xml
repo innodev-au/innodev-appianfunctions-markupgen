@@ -1,0 +1,168 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>au.com.innodev.appianplugin.markupgen</groupId>
+    <artifactId>innodev-appianplugin-markupgen</artifactId>
+    <version>1.0.1</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+
+        <!-- Library versions -->
+        <libraries.appian-lib-type-transformer.version>1.3.4</libraries.appian-lib-type-transformer.version>
+        <libraries.appian.compileVersion>17.4.29.0</libraries.appian.compileVersion>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.java</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>appian-plugin.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/classes/META-INF/lib
+                            </outputDirectory>
+                            <excludeArtifactIds>appian-plugin-sdk,appian-expression-evaluator,appian-ae</excludeArtifactIds>
+                            <execludeTransitive>true</execludeTransitive>
+                            <includeScope>compile</includeScope>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+        </plugins>
+    </build>
+
+    <dependencies>
+     
+        <!-- Appian compile-time dependencies -->
+        <dependency>
+            <groupId>appian</groupId>
+            <artifactId>appian-plugin-sdk</artifactId>
+            <version>${libraries.appian.compileVersion}</version>
+            <systemPath>${project.basedir}/lib/internalRepoOnly/appian-plug-in-sdk.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>appian</groupId>
+            <artifactId>appian-expression-evaluator</artifactId>
+            <version>${libraries.appian.compileVersion}</version>
+            <systemPath>${project.basedir}/lib/internalRepoOnly/appian-expression-evaluator-${libraries.appian.compileVersion}.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>appian</groupId>
+            <artifactId>appian-ae</artifactId>
+            <version>${libraries.appian.compileVersion}</version>
+            <systemPath>${project.basedir}/lib/internalRepoOnly/appian-ae-${libraries.appian.compileVersion}.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>appian</groupId>
+            <artifactId>appian-ae</artifactId>
+            <version>${libraries.appian.compileVersion}</version>
+            <systemPath>${project.basedir}/lib/internalRepoOnly/appian-ae-${libraries.appian.compileVersion}.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>appian</groupId>
+            <artifactId>appian-ae</artifactId>
+            <version>${libraries.appian.compileVersion}</version>
+            <systemPath>${project.basedir}/lib/internalRepoOnly/appiancorp-i18n.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        
+        
+        <!-- used by plugin SDK -->
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Used in this project -->
+        <dependency>
+            <groupId>appian-lib</groupId>
+            <artifactId>appian-lib-type-transformer</artifactId>
+            <version>${libraries.appian-lib-type-transformer.version}</version>
+
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/appian-lib-type-transformer-${libraries.appian-lib-type-transformer.version}.jar</systemPath>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>24.0-jre</version>
+            <scope>test</scope>
+        </dependency>
+       
+    </dependencies>
+
+    <organization>
+        <name>Innodev</name>
+        <url>https://www.innodev.com.au</url>
+    </organization>
+    <name>HTML / XML Markup Generation Functions</name>
+    <description>This plugin provides Appian functions that generate HTML and XML with properly-escaped characters. It can be used to produce HTML email content, XML to be fed into plugins or services, etc.
+
+By escaping text automatically, it provides a better abstraction that minimises the effort and risk of using text concatenation and the 'toHtml' function to produce markup, whether it's HTML or XML. It also helps ensure well-formed content is produced, by automatically opening and closing tags, as well as attributes and its values.
+
+For XML generation, 'toHtml' is not appropriate, most notably because it doesn't escape apostrophe - i.e., escaping it is required in XML but not in HTML.</description>
+</project>
