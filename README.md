@@ -1,11 +1,9 @@
 # Appian plugin: HTML / XML Markup Generation Functions
 
 ## Introduction
-This plugin provides Appian functions that generate HTML and XML with properly-escaped characters. It can be used to produce HTML email content, XML to be fed into plugins or services, etc.
+This plugin provides Appian functions that generate HTML and XML contents with properly-escaped characters. It can be used to produce HTML email content, XML to be fed into plugins or services, etc.
 
-By escaping text automatically, it provides a better abstraction that minimises the effort and risk of using text concatenation and the 'toHtml' function to produce markup, whether it's HTML or XML. It also helps ensure well-formed content is produced, by automatically opening and closing tags, as well as attributes and its values.
-
-For XML generation, 'toHtml' is not appropriate, most notably because it doesn't escape apostrophe - i.e., escaping it is required in XML but not in HTML.
+By escaping characters by default rather than by exception, it provides a better abstraction that minimises the effort and risk compared to using text concatenation and selectively calling functions such as _toHtml_. It also provides a mechanism for less error-prone content generation, by automatically opening and closing tags and attributes.
 
 ## Example
 For example, instead of manually escaping HTML like in this excerpt:
@@ -33,7 +31,7 @@ MarkupGen_html_toText(
 )
 ```
 
-Notice how the language syntax helps us create valid HTML content. Furthermore, the HTML escaping happens by default; we don't need to remember to call a specific function to escape text.
+Notice how the language syntax helps us create valid HTML content. Also notice that the HTML text is escaped by default; we don't need to remember to call a specific function to do this.
 
 Admittedly, the lengthy function names get in the way a bit, but you may choose to wrap common tags in new expression rules within your project.
 
@@ -58,5 +56,5 @@ Admittedly, the lengthy function names get in the way a bit, but you may choose 
 ## Compiling
 
 - Import the source code as a Maven project into your IDE. 
-- In order for the project to compile, you will need to copy Appian JAR files to the internalRepoOnly folder. You will need to grab them from a local Appian installation. Due to licensing restrictions, these files can't be added to this public repository.
+- In order for the project to compile, you will need to copy Appian JAR files to the _internalRepoOnly_ folder. You will need to grab them from a local Appian installation. Due to licensing restrictions, these files can't be added to this public repository.
 - You will also need to edit the POM.xml file to set the right _Appian compile version_ to properly reference the Appian libraries.
