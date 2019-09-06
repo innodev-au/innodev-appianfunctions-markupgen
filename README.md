@@ -1,12 +1,12 @@
 # Appian plugin: HTML / XML Markup Generation Functions
 
 ## Introduction
-This plugin provides Appian functions that generate HTML and XML contents with properly-escaped characters. It can be used to produce HTML email content, XML to be fed into plugins or services, etc.
+This plugin provides Appian functions that generate HTML and XML content with properly-escaped characters. It can be used to produce HTML email content, XML to be fed into plugins or services, etc.
 
 By escaping characters by default rather than by exception, it provides a better abstraction that minimises the effort and risk compared to using text concatenation and selectively calling functions such as _toHtml_. It also provides a mechanism for less error-prone content generation, by automatically opening and closing tags and attributes.
 
 ## Example
-For example, instead of manually escaping HTML like in this excerpt:
+As a point of comparison, consider the following code excerpt for HTML generation. It uses text concatenation and manual function calls to escape values.
 ```javascript
 "<p class=""info"">" & 
     "<b>" & "Message for " & toHtml(ri!name) & "</b>" &
@@ -14,9 +14,15 @@ For example, instead of manually escaping HTML like in this excerpt:
      "<a href=""" & ri!url & """>Click here to " & ri!action & "</a>" &
 "</p>"
 ```
-Even though the content is short, there are a lot of things that could go wrong, such as not properly closing an element by simply forgetting the corresponding close tag. Also. notice the double quotes for attribute such as class and href. It'd be very easy to miss a start or end-of-attribute value double quote. Lastly, we're being forced to remember to call _toHtml_ in several places.
+Even though the content is short, there are a lot of things that could go wrong:
+- We're being forced to remember to call _toHtml_ in several places. We could forget to do it, such as what happend with ri!action, and the content would not be escaped.
+    - The impact is that the content could be broken and not render as expected. 
+    - In more severe cases, the output may be succeptible to malicious alteration, with foreign elements being injected through user input or other means. Depending on where the generated content goes to, this may be more or less of a concern, but it's definitely something to always take into account and a very strong reason to use functionality like the one provided by this plugin. 
+    - There might be places where there would never be a no need to escape parts of text. However, being forced to think where to apply escaping is problematic.
+- When several HTML tags are involved, it's easy to forget closing one of them or misplacing the tag close.
+- Also notice the double quotes for attribute such as _class_ and _href_. It would be very easy to miss the start or end-of-attribute value double quote.
 
-With this plugin you may create the same output like this:
+With this plugin you may produce the same output like this:
 ```javascript
 MarkupGen_html_toText(
   MarkupGen_html_newElem("p",  {class: "info"}, 
