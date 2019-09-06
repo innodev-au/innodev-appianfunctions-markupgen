@@ -42,13 +42,13 @@ Admittedly, the lengthy function names get in the way a bit, but you may choose 
 - `MarkupGen_html_newElem` Creates a new HTML element, such as `<p>` or `<a href="x">`.
 - `MarkupGen_html_toText` Converts an element or list of HTML elements to text.
 - `MarkupGen_html_newTextPart` (Less common): Creates a new element for text. It's necessary only when you need to use a uniform list of the _MarkupGen_HtmlPart_ data type.
-- `MarkupGen_html_newRawPart` (Less common): Creates a new element with raw HTML. Use it with a lot of caution. Make sure that the raw content is trusted and doesn't containt parts with unsanitised user input.
+- `MarkupGen_html_newRawPart` (Less common): Creates a new element with raw HTML. Use it with a lot of caution. Make sure that the raw content is trusted and doesn't contain parts with unsanitised user input.
 
 **For XML Generation**:
 - `MarkupGen_xml_newElem` Creates a new XML element, such as `<item>` or `<person>`.
 - `MarkupGen_xml_toText` Converts an XML element or list of XML elements to text.
 - `MarkupGen_xml_newTextPart` (Less common): Creates a new element for text. It's necessary only when you need to use a uniform list of the _MarkupGen_XmlPart_ data type.
-- `MarkupGen_xml_newRawPart`  (Less common): Creates a new element with raw XML. Use it with a lot of caution. Make sure that the raw content is trusted and doesn't containt parts with unsanitised user input.
+- `MarkupGen_xml_newRawPart`  (Less common): Creates a new element with raw XML. Use it with a lot of caution. Make sure that the raw content is trusted and doesn't contain parts with unsanitised user input.
 
 ## Installing
 
