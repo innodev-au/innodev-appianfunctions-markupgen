@@ -58,4 +58,6 @@ For XML Generation:
 
 ## Compiling
 
-Use the Maven project in your IDE. In order for the project to compile, you will need to copy Appian JAR files to the internalRepoOnly folder. You will also need to edit the POM.xml file to set the right Appian compile version to properly reference the Appian files.
+- Use the Maven project in your IDE. 
+- In order for the project to compile, you will need to copy Appian JAR files to the internalRepoOnly folder. You will need to grab them from a local Appian installation. Due to licensing restrictions, these files can't be added to this public repository.
+- You will also need to edit the POM.xml file to set the right _Appian compile version_ to properly reference the Appian libraries.
