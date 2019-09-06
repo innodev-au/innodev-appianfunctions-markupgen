@@ -3,7 +3,7 @@
 ## Introduction
 This plugin provides Appian functions that generate HTML and XML content with properly-escaped characters. It can be used to produce HTML email content, XML to be fed into plugins or services, etc.
 
-By escaping characters by default rather than by exception, it provides a better abstraction that minimises the effort and risk compared to using text concatenation and selectively calling functions such as _toHtml_. It also provides a mechanism for less error-prone content generation, by automatically opening and closing tags and attributes.
+By **escaping characters by default rather than by exception**, it provides a better abstraction that minimises the effort and risk compared to using text concatenation and selectively calling functions such as _toHtml_. It also provides a mechanism for less error-prone content generation, by automatically opening and closing tags and attributes.
 
 ## Example
 As a point of comparison, consider the following code excerpt for HTML generation. It uses text concatenation and manual function calls to escape values.
