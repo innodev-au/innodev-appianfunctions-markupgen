@@ -38,26 +38,25 @@ Notice how the language syntax helps us create valid HTML content. Furthermore, 
 Admittedly, the lengthy function names get in the way a bit, but you may choose to wrap common tags in new expression rules within your project.
 
 ## Usage
-For HTML Generation:
+**For HTML Generation**:
 - `MarkupGen_html_newElem` Creates a new HTML element, such as `<p>` or `<a href="x">`.
-- `MarkupGen_html_toText` Converts an element or list of elements to text.
-- `MarkupGen_html_newTextPart` (Less common): Creates a new element for text.
-- `MarkupGen_html_newRawPart` (Less common): Creates a new element with raw HTML.
+- `MarkupGen_html_toText` Converts an element or list of HTML elements to text.
+- `MarkupGen_html_newTextPart` (Less common): Creates a new element for text. It's necessary only when you need to use use uniform data types of . In most case
+- `MarkupGen_html_newRawPart` (Less common): Creates a new element with raw HTML. Use it with a lot of caution. Make sure that the raw content is trusted and doesn't containt parts with unsanitised user input.
 
-
-For XML Generation:
+**For XML Generation**:
 - `MarkupGen_xml_newElem` Creates a new XML element, such as `<item>` or `<person>`.
-- `MarkupGen_xml_toText` Converts an XML element to text.
+- `MarkupGen_xml_toText` Converts an XML element or list of XML elements to text.
 - `MarkupGen_xml_newTextPart` (Less common): Creates a new element for text.
-- `MarkupGen_xml_newRawPart`  (Less common): Creates a new element with raw XML.
+- `MarkupGen_xml_newRawPart`  (Less common): Creates a new element with raw XML. Use it with a lot of caution. Make sure that the raw content is trusted and doesn't containt parts with unsanitised user input.
 
 ## Installing
 
-- For Appian cloud instances, look for the plugin in the Plugins section of the Administrative console.
+- For Appian cloud instances, go to the Administrative console, select _Deploy New Plugin_ and look for this plugin by name. Note that you don't need to copy anything from this repository.
 - For local Appian installations, add the JAR to the plugins folder of the Appian server.
 
 ## Compiling
 
-- Use the Maven project in your IDE. 
+- Import the source code as a Maven project into your IDE. 
 - In order for the project to compile, you will need to copy Appian JAR files to the internalRepoOnly folder. You will need to grab them from a local Appian installation. Due to licensing restrictions, these files can't be added to this public repository.
 - You will also need to edit the POM.xml file to set the right _Appian compile version_ to properly reference the Appian libraries.
