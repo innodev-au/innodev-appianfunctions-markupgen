@@ -16,7 +16,7 @@ For example, instead of manually escaping HTML like in this excerpt:
      "<a href=""" & ri!url & """>Click here to " & ri!action & "</a>" &
 "</p>"
 ```
-Even though the content is short, there's a lot of things that could go wrong, such as not properly closing a tag by simply forgetting the corresponding element. Also. notice the double quotes for attribute such as class and href. It'd be very easy to miss a start or end-of-attribute value double quote. Lastly, we're being forced to remember to call toHtml in several places.
+Even though the content is short, there are a lot of things that could go wrong, such as not properly closing an element by simply forgetting the corresponding close tag. Also. notice the double quotes for attribute such as class and href. It'd be very easy to miss a start or end-of-attribute value double quote. Lastly, we're being forced to remember to call _toHtml_ in several places.
 
 With this plugin you may create the same output like this:
 ```javascript
@@ -41,13 +41,13 @@ Admittedly, the lengthy function names get in the way a bit, but you may choose 
 **For HTML Generation**:
 - `MarkupGen_html_newElem` Creates a new HTML element, such as `<p>` or `<a href="x">`.
 - `MarkupGen_html_toText` Converts an element or list of HTML elements to text.
-- `MarkupGen_html_newTextPart` (Less common): Creates a new element for text. It's necessary only when you need to use use uniform data types of . In most case
+- `MarkupGen_html_newTextPart` (Less common): Creates a new element for text. It's necessary only when you need to use a uniform list of the _MarkupGen_HtmlPart_ data type.
 - `MarkupGen_html_newRawPart` (Less common): Creates a new element with raw HTML. Use it with a lot of caution. Make sure that the raw content is trusted and doesn't containt parts with unsanitised user input.
 
 **For XML Generation**:
 - `MarkupGen_xml_newElem` Creates a new XML element, such as `<item>` or `<person>`.
 - `MarkupGen_xml_toText` Converts an XML element or list of XML elements to text.
-- `MarkupGen_xml_newTextPart` (Less common): Creates a new element for text.
+- `MarkupGen_xml_newTextPart` (Less common): Creates a new element for text. It's necessary only when you need to use a uniform list of the _MarkupGen_XmlPart_ data type.
 - `MarkupGen_xml_newRawPart`  (Less common): Creates a new element with raw XML. Use it with a lot of caution. Make sure that the raw content is trusted and doesn't containt parts with unsanitised user input.
 
 ## Installing
