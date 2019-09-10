@@ -47,4 +47,4 @@ Refer to the [documentation](https://github.com/innodev-au/innodev-appianfunctio
 
 ## Installing
 
-Look for ``HTML / XML Markup Generation`` in the plugin deployment page of your Appian cloud installation. For more details, refer to [https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/Installing](installation).
+Look for ``HTML / XML Markup Generation`` in the plugin deployment page of your Appian cloud installation. For more details, refer to [installation](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/Installing]).
