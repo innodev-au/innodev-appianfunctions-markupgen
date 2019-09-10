@@ -26,13 +26,13 @@ With this plugin you may produce the same output like this:
 ```javascript
 MarkupGen_html_toText(
   MarkupGen_html_newElem("p",  {class: "info"}, 
-  {
-    MarkupGen_html_newElem("b", null, "Message for " & ri!name),
-    ri!message,
-    MarkupGen_html_newElem( "a",  { href: ri!url },
-    "Click here to " & ri!action
-    )    
-  }
+    {
+      MarkupGen_html_newElem("b", null, "Message for " & ri!name),
+      ri!message,
+      MarkupGen_html_newElem( "a",  { href: ri!url },
+         "Click here to " & ri!action
+      )    
+    }
   )
 )
 ```
