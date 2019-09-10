@@ -41,26 +41,10 @@ Notice how the language syntax helps us create valid HTML content. Also notice t
 
 Admittedly, the lengthy function names get in the way a bit, but you may choose to wrap common tags in new expression rules within your project.
 
-## Usage
-**For HTML Generation**:
-- `MarkupGen_html_newElem` Creates a new HTML element, such as `<p>` or `<a href="x">`.
-- `MarkupGen_html_toText` Converts an element or list of HTML elements to text.
-- `MarkupGen_html_newTextPart` (Less common): Creates a new element for text. It's necessary only when you need to use a uniform list of the _MarkupGen_HtmlPart_ data type.
-- `MarkupGen_html_newRawPart` (Less common): Creates a new element with raw HTML. Use it with a lot of caution. Make sure that the raw content is trusted and doesn't contain parts with unsanitised user input.
+# Documentation
 
-**For XML Generation**:
-- `MarkupGen_xml_newElem` Creates a new XML element, such as `<item>` or `<person>`.
-- `MarkupGen_xml_toText` Converts an XML element or list of XML elements to text.
-- `MarkupGen_xml_newTextPart` (Less common): Creates a new element for text. It's necessary only when you need to use a uniform list of the _MarkupGen_XmlPart_ data type.
-- `MarkupGen_xml_newRawPart`  (Less common): Creates a new element with raw XML. Use it with a lot of caution. Make sure that the raw content is trusted and doesn't contain parts with unsanitised user input.
+Refer to the [documentation](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki) section for more information, including the [user guide](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/User-Guide) and [reference](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/Reference).
 
 ## Installing
 
-- For Appian cloud instances, go to the Administrative console, select _Deploy New Plugin_ and look for this plugin by name. Note that you don't need to copy anything from this repository.
-- For local Appian installations, add the JAR to the plugins folder of the Appian server.
-
-## Compiling
-
-- Import the source code as a Maven project into your IDE. 
-- In order for the project to compile, you will need to copy Appian JAR files to the _internalRepoOnly_ folder. You will need to grab them from a local Appian installation. Due to licensing restrictions, these files can't be added to this public repository.
-- You will also need to edit the POM.xml file to set the right _Appian compile version_ to properly reference the Appian libraries.
+Look for ``HTML / XML Markup Generation`` in the plugin deployment page of your Appian cloud installation. For more details, refer to [https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/Installing](installation).
