@@ -41,10 +41,12 @@ Notice how the language syntax helps us create valid HTML content. Also notice t
 
 Admittedly, the lengthy function names get in the way a bit, but you may choose to wrap common tags in new expression rules within your project.
 
-# Documentation
-
-Refer to the [documentation](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki) section for more information, including the [user guide](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/User-Guide) and [reference](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/Reference).
-
 ## Installing
 
 Look for ``HTML / XML Markup Generation`` in the plugin deployment page of your Appian cloud installation. For more details, refer to [installation](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/Installing]).
+
+## Documentation
+
+Refer to the [documentation](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki) section for more information, including the [user guide](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/User-Guide) and [reference](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/Reference).
+
+
