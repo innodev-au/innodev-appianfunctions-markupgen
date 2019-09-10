@@ -47,6 +47,6 @@ Look for ``HTML / XML Markup Generation`` in the plugin deployment page of your 
 
 ## Documentation
 
-Refer to the [documentation](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki) section for more information, including the [user guide](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/User-Guide) and [reference](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/Reference).
+Refer to the [documentation](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki) for more information. It includes sections such as [user guide](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/User-Guide) and [reference](https://github.com/innodev-au/innodev-appianfunctions-markupgen/wiki/Reference).
 
 
